@@ -1,22 +1,19 @@
-import React from "react";
-import Unity, { UnityContext } from "react-unity-webgl";
-
-const productionMode = true;
-const assetsName = productionMode ? "tembak-babi" : "tembak-babi-dev";
-const prodFormat = "";
-const unityContext = new UnityContext({
-  loaderUrl: `/assets/${assetsName}/Build/${assetsName}.loader.js`,
-  dataUrl: `/assets/${assetsName}/Build/${assetsName}.data${prodFormat}`,
-  frameworkUrl: `/assets/${assetsName}/Build/${assetsName}.framework.js${prodFormat}`,
-  codeUrl: `/assets/${assetsName}/Build/${assetsName}.wasm${prodFormat}`,
-});
+import * as React from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import JSListen from "./pages/js-listen";
+import PGShoot from "./pages/pig-shoot";
 
 function App() {
-
-  // useEffect(() => {
-  //   unityContext.on("progress", (progression) => console.log(progression))
-  // }, [])
-  return <Unity unityContext={unityContext} />;
+  return (
+    <div className="App">
+      <h1>Welcome to Meteor Unity!</h1>
+      <Routes>
+        <Route path="/" element={<PGShoot />} />
+        <Route path="js-listen" element={<JSListen />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App;
+export default App
