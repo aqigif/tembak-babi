@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 
 const productionMode = true;
@@ -12,6 +12,10 @@ const unityContext = new UnityContext({
 });
 
 function App() {
+
+  // useEffect(() => {
+  //   unityContext.on("progress", (progression) => console.log(progression))
+  // }, [])
   return <Unity unityContext={unityContext} />;
 }
 
