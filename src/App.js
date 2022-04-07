@@ -1,7 +1,7 @@
 import React from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 
-const productionMode = true;
+const productionMode = false;
 const assetsName = productionMode ? "tembak-babi" : "tembak-babi-dev";
 const prodFormat = `${productionMode ? ".gz" : ""}`;
 const unityContext = new UnityContext({
