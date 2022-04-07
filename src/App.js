@@ -1,9 +1,9 @@
 import React from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 
-const productionMode = false;
+const productionMode = true;
 const assetsName = productionMode ? "tembak-babi" : "tembak-babi-dev";
-const prodFormat = `${productionMode ? ".gz" : ""}`;
+const prodFormat = "";
 const unityContext = new UnityContext({
   loaderUrl: `/assets/${assetsName}/Build/${assetsName}.loader.js`,
   dataUrl: `/assets/${assetsName}/Build/${assetsName}.data${prodFormat}`,
