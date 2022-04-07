@@ -3,17 +3,12 @@ import Unity, { UnityContext } from "react-unity-webgl";
 
 const productionMode = true;
 const assetsName = productionMode ? "tembak-babi" : "tembak-babi-dev";
+const prodFormat = `${productionMode ? ".gz" : ""}`;
 const unityContext = new UnityContext({
   loaderUrl: `/assets/${assetsName}/Build/${assetsName}.loader.js`,
-  dataUrl: `/assets/${assetsName}/Build/${assetsName}.data${
-    productionMode ? ".gz" : ""
-  }`,
-  frameworkUrl: `/assets/${assetsName}/Build/${assetsName}.framework.js${
-    productionMode ? ".gz" : ""
-  }`,
-  codeUrl: `/assets/${assetsName}/Build/${assetsName}.wasm${
-    productionMode ? ".gz" : ""
-  }`,
+  dataUrl: `/assets/${assetsName}/Build/${assetsName}.data${prodFormat}`,
+  frameworkUrl: `/assets/${assetsName}/Build/${assetsName}.framework.js${prodFormat}`,
+  codeUrl: `/assets/${assetsName}/Build/${assetsName}.wasm${prodFormat}`,
 });
 
 function App() {
