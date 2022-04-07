@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 
 const productionMode = true;
@@ -13,17 +13,11 @@ const unityContext = new UnityContext({
 
 function PGShoot() {
 
-  // useEffect(() => {
-  //   unityContext.
-  // }, [])
-  unityContext.on("GameOver", (score) => {
-    try {
-      console.log("game over", score)
-      
-    } catch (error) {
-      
-    }
-  });
+  useEffect(() => {
+    unityContext.on("GameOver", () => {
+      console.log("GameOver")
+    });
+  }, [])
   return <Unity unityContext={unityContext} />;
 }
 
