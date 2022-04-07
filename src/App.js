@@ -1,11 +1,13 @@
 import React from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 
+const assetsName = "tembak-babi-dev"
+const productionMode = true;
 const unityContext = new UnityContext({
-  loaderUrl: "/assets/tembak-babi-dev/Build/tembak-babi-dev.loader.js",
-  dataUrl: "/assets/tembak-babi-dev/Build/tembak-babi-dev.data",
-  frameworkUrl: "/assets/tembak-babi-dev/Build/tembak-babi-dev.framework.js",
-  codeUrl: "/assets/tembak-babi-dev/Build/tembak-babi-dev.wasm",
+  loaderUrl: `/assets/${assetsName}/Build/${assetsName}.loader.js`,
+  dataUrl: `/assets/${assetsName}/Build/${assetsName}.data${productionMode ? ".gz" : ""}`,
+  frameworkUrl: `/assets/${assetsName}/Build/${assetsName}.framework.js${productionMode ? ".gz" : ""}`,
+  codeUrl: `/assets/${assetsName}/Build/${assetsName}.wasm${productionMode ? ".gz" : ""}`,
 });
 
 function App() {
