@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 
 const productionMode = true;
